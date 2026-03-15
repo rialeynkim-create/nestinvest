@@ -11,100 +11,228 @@
       padding: 0;
     }
 
+    :root {
+      --green-dark: #17352c;
+      --green: #1e5f4d;
+      --green-soft: #eaf5ef;
+      --green-light: #f5faf7;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --cream: #f7f8f4;
+      --text: #24332d;
+      --muted: #5d6d66;
+      --white: #ffffff;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      --radius: 20px;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f8f4;
-      color: #17352c;
+      background: var(--cream);
+      color: var(--text);
       line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
     }
 
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid #e3ebe6;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--green-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid #d9e8df;
+      flex-shrink: 0;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: var(--white);
+    }
+
+    .brand-text h1 {
+      font-size: 24px;
+      line-height: 1.1;
+      color: var(--green-dark);
+    }
+
+    .brand-text p {
+      font-size: 14px;
+      color: var(--orange-dark);
+      font-weight: bold;
+    }
+
+    .nav-link {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
     .hero {
-      background: linear-gradient(135deg, #1e5f4d 0%, #2a7a63 100%);
-      color: white;
+      background: linear-gradient(135deg, var(--green) 0%, #2f8169 100%);
+      color: var(--white);
       padding: 90px 0 80px;
     }
 
-    .hero h1 {
-      font-size: 56px;
-      margin-bottom: 12px;
-      text-align: center;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
     }
 
-    .hero .tagline {
-      font-size: 22px;
-      text-align: center;
-      color: #f8e6be;
-      margin-bottom: 24px;
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      color: #f8e7c1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 16px;
     }
 
-    .hero .intro {
+    .hero h2 {
+      font-size: 52px;
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #e7f5ef;
       max-width: 760px;
-      margin: 0 auto 32px;
-      text-align: center;
-      font-size: 18px;
-      color: #ecf7f2;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
-      justify-content: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
+      margin-top: 28px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 24px;
-      border-radius: 10px;
+      padding: 14px 22px;
+      border-radius: 12px;
       font-weight: bold;
       transition: 0.2s ease;
     }
 
     .btn-primary {
-      background: #f59e0b;
-      color: white;
+      background: var(--orange);
+      color: var(--white);
     }
 
     .btn-primary:hover {
-      background: #db8c09;
+      background: var(--orange-dark);
     }
 
     .btn-secondary {
-      background: white;
-      color: #1e5f4d;
+      background: var(--white);
+      color: var(--green);
     }
 
-    .btn-secondary:hover {
-      background: #f2f2f2;
+    .hero-demo {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-demo h3 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .demo-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .mini-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .mini-card .label {
+      font-size: 12px;
+      color: #d7efe5;
+      margin-bottom: 6px;
+    }
+
+    .mini-card .value {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
     }
 
     section {
-      padding: 70px 0;
+      padding: 78px 0;
     }
 
-    h2 {
-      font-size: 34px;
-      margin-bottom: 18px;
+    .section-title {
       text-align: center;
-      color: #17352c;
+      font-size: 36px;
+      color: var(--green-dark);
+      margin-bottom: 16px;
     }
 
     .section-intro {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto 40px;
       text-align: center;
-      color: #52635b;
       font-size: 18px;
+      color: var(--muted);
     }
 
     .grid-3 {
@@ -120,39 +248,40 @@
     }
 
     .card {
-      background: white;
-      border-radius: 18px;
+      background: var(--white);
+      border-radius: var(--radius);
       padding: 28px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      box-shadow: var(--shadow);
+      border: 1px solid #e4ece6;
     }
 
     .card h3 {
-      margin-bottom: 12px;
-      color: #17352c;
       font-size: 22px;
+      color: var(--green-dark);
+      margin-bottom: 12px;
     }
 
     .card p {
-      color: #52635b;
+      color: var(--muted);
       font-size: 16px;
     }
 
-    .highlight-section {
-      background: #eef5f0;
+    .highlight {
+      background: var(--green-light);
     }
 
     .statement-box {
-      background: white;
-      border-left: 6px solid #f59e0b;
-      border-radius: 14px;
+      background: var(--white);
+      border-left: 6px solid var(--orange);
+      border-radius: 16px;
       padding: 26px;
-      margin-bottom: 22px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
     }
 
     .statement-box h3 {
+      color: var(--green);
       margin-bottom: 10px;
-      color: #1e5f4d;
       font-size: 22px;
     }
 
@@ -161,152 +290,283 @@
       font-size: 17px;
     }
 
-    .values {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .value-pill {
-      background: #1e5f4d;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: bold;
-      font-size: 15px;
-    }
-
     .purpose-box {
-      background: #1e5f4d;
+      background: var(--green);
       color: white;
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 34px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow);
     }
 
-    .purpose-box h2 {
-      color: white;
-      text-align: left;
-      margin-bottom: 16px;
+    .purpose-box h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
     }
 
     .purpose-box p {
-      color: #ebf7f1;
+      color: #ecf7f2;
       font-size: 18px;
     }
 
-    .footer-cta {
-      background: #17352c;
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
     }
 
-    .footer-cta h2 {
-      color: white;
-      margin-bottom: 16px;
+    .value-pill {
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: bold;
     }
 
-    .footer-cta p {
+    .demo-section {
+      background: #f0f6f2;
+    }
+
+    .pool-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .pool-badge {
+      background: #fff1d9;
+      color: var(--orange-dark);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .pool-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .pool-meta-box {
+      background: var(--green-soft);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .pool-meta-box strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 20px;
+      margin-top: 4px;
+    }
+
+    .pool-meta-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .outcome-box {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e5ede8;
+    }
+
+    .outcome-box h4 {
+      color: var(--green);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .outcome-box p {
+      color: var(--muted);
+    }
+
+    .signup-wrap {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+      border-radius: 26px;
+      padding: 36px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .signup-wrap h3 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .signup-wrap p {
+      color: #dfefe8;
+      margin-bottom: 24px;
       max-width: 720px;
-      margin: 0 auto 24px;
-      color: #dfeae5;
-      font-size: 18px;
+    }
+
+    .signup-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .signup-form input,
+    .signup-form select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .signup-form button {
+      padding: 14px 22px;
+      border: none;
+      border-radius: 12px;
+      background: var(--orange);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .signup-note {
+      font-size: 13px;
+      color: #d9e9e3;
+      margin-top: 14px;
     }
 
     footer {
       text-align: center;
-      padding: 24px;
+      padding: 28px 18px 40px;
+      color: #66756f;
       font-size: 14px;
-      color: #6b7a72;
-      background: #f7f8f4;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
+      .hero-grid,
       .grid-3,
-      .grid-2 {
+      .grid-2,
+      .signup-form {
         grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 42px;
+      .hero h2 {
+        font-size: 40px;
       }
 
-      .hero .tagline {
-        font-size: 20px;
+      .section-title {
+        font-size: 30px;
       }
 
-      h2 {
-        font-size: 28px;
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
+  <div class="topbar" id="top">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo-box">
+          <img src="logo.png" alt="NestInvest logo" />
+        </div>
+        <div class="brand-text">
+          <h1>NestInvest</h1>
+          <p>Save together. Grow together.</p>
+        </div>
+      </div>
+      <a class="nav-link" href="#signup">Join the Email List</a>
+    </div>
+  </div>
+
   <header class="hero">
-    <div class="container">
-      <h1>NestInvest</h1>
-      <p class="tagline">Save together. Grow together.</p>
-      <p class="intro">
-        NestInvest is a community-driven financial concept designed to expand access
-        to meaningful financial opportunity by combining disciplined saving,
-        shared accountability, and pooled investing into one transparent and
-        exciting platform.
-      </p>
-      <div class="hero-buttons">
-        <a href="#mission" class="btn btn-primary">Learn More</a>
-        <a href="#purpose" class="btn btn-secondary">Why NestInvest Exists</a>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">A disciplined, community-driven financial vision</div>
+        <h2>Expanding access to meaningful financial opportunity.</h2>
+        <p>
+          NestInvest is built to transform saving into a disciplined
+          community-driven force by combining shared investment, reduced
+          individual risk, and transparent systems that create meaningful and
+          exciting opportunities for everyday participants.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#signup">Get Early Updates</a>
+          <a class="btn btn-secondary" href="#demo">See Demo Pools</a>
+        </div>
+      </div>
+
+      <div class="hero-demo">
+        <h3>Illustrative Demo Snapshot</h3>
+        <div class="demo-mini-grid">
+          <div class="mini-card">
+            <div class="label">Active pools</div>
+            <div class="value">4</div>
+          </div>
+          <div class="mini-card">
+            <div class="label">Community members</div>
+            <div class="value">286</div>
+          </div>
+          <div class="mini-card">
+            <div class="label">Starting class entry</div>
+            <div class="value">$25</div>
+          </div>
+          <div class="mini-card">
+            <div class="label">Illustrative featured pool</div>
+            <div class="value">$184</div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <section>
     <div class="container">
-      <h2>What NestInvest Does</h2>
+      <h2 class="section-title">What NestInvest Does</h2>
       <p class="section-intro">
         NestInvest uniquely blends community-based saving, shared accountability,
         and pooled investing to create structured financial opportunities that
-        individuals often cannot access alone.
+        individuals cannot access alone.
       </p>
 
       <div class="grid-3">
         <div class="card">
           <h3>Community-Based Saving</h3>
           <p>
-            NestInvest encourages people to build savings together rather than in
-            isolation, turning financial discipline into a shared experience.
+            NestInvest is designed to help people save together rather than in isolation,
+            turning consistency and accountability into a collective strength.
           </p>
         </div>
-
         <div class="card">
-          <h3>Reduced Individual Risk</h3>
+          <h3>Shared Investment Approach</h3>
           <p>
-            By combining shared investment principles and structured systems,
-            NestInvest aims to create opportunities with greater stability and
-            confidence for everyday participants.
+            By combining participation and structure, NestInvest aims to reduce
+            individual barriers and create more meaningful access to opportunity.
           </p>
         </div>
-
         <div class="card">
-          <h3>Transparent Opportunity</h3>
+          <h3>Transparent Systems</h3>
           <p>
-            NestInvest is built around transparent and secure systems that help
-            participants understand the process, trust the platform, and stay engaged.
+            Clarity, security, and trust are central to the experience so
+            participants can understand what they are joining and why it matters.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="highlight-section" id="mission">
+  <section class="highlight">
     <div class="container">
-      <h2>Vision & Mission</h2>
-      <p class="section-intro">
-        The NestInvest foundation is built on a clear long-term vision and a
-        practical mission centered on access, discipline, and meaningful financial opportunity.
-      </p>
+      <h2 class="section-title">Vision & Mission</h2>
 
       <div class="statement-box">
         <h3>Vision</h3>
@@ -328,10 +588,10 @@
     </div>
   </section>
 
-  <section id="purpose">
+  <section>
     <div class="container">
       <div class="purpose-box">
-        <h2>Our Purpose</h2>
+        <h3>Purpose</h3>
         <p>
           We exist to remove the structural and behavioral barriers that prevent
           everyday individuals from participating in meaningful financial opportunities.
@@ -342,9 +602,10 @@
 
   <section>
     <div class="container">
-      <h2>Core Values</h2>
+      <h2 class="section-title">Core Values</h2>
       <p class="section-intro">
-        These values guide how NestInvest is designed, communicated, and built for its community.
+        Accountability, community, equal opportunity, security, discipline,
+        transparency, and opportunity creation shape how NestInvest is being built.
       </p>
 
       <div class="values">
@@ -359,49 +620,132 @@
     </div>
   </section>
 
-  <section class="highlight-section">
+  <section class="demo-section" id="demo">
     <div class="container">
-      <h2>Why NestInvest Matters</h2>
+      <h2 class="section-title">Demo Pools & Classes</h2>
       <p class="section-intro">
-        Traditional financial systems often leave everyday people on the outside.
-        NestInvest is designed to create a more accessible path forward.
+        These example classes are only illustrative, but they help show how
+        NestInvest could create structured entry points and possible outcomes for participants.
       </p>
 
-      <div class="grid-2">
+      <div class="grid-3">
         <div class="card">
-          <h3>Removes Barriers</h3>
+          <div class="pool-card-top">
+            <h3>Starter Pool</h3>
+            <div class="pool-badge">Entry Level</div>
+          </div>
           <p>
-            NestInvest addresses both structural and behavioral obstacles that keep
-            people from participating in meaningful financial growth.
+            Built for people who want a smaller, disciplined monthly commitment
+            while still participating in a meaningful community-based system.
           </p>
+          <div class="pool-meta">
+            <div class="pool-meta-box">
+              <span>Illustrative entry</span>
+              <strong>$25/mo</strong>
+            </div>
+            <div class="pool-meta-box">
+              <span>Illustrative members</span>
+              <strong>120</strong>
+            </div>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Creates New Possibility</h3>
+          <div class="pool-card-top">
+            <h3>Growth Pool</h3>
+            <div class="pool-badge">Most Popular</div>
+          </div>
           <p>
-            Through pooled participation and disciplined systems, NestInvest seeks
-            to unlock financial opportunities that individuals may struggle to
-            reach on their own.
+            A mid-level class for participants who want greater involvement and a
+            stronger path toward pooled financial opportunity.
+          </p>
+          <div class="pool-meta">
+            <div class="pool-meta-box">
+              <span>Illustrative entry</span>
+              <strong>$50/mo</strong>
+            </div>
+            <div class="pool-meta-box">
+              <span>Illustrative members</span>
+              <strong>95</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pool-card-top">
+            <h3>Momentum Pool</h3>
+            <div class="pool-badge">Advanced</div>
+          </div>
+          <p>
+            Designed for users who want a larger structured contribution and a
+            more ambitious community-based financial experience.
+          </p>
+          <div class="pool-meta">
+            <div class="pool-meta-box">
+              <span>Illustrative entry</span>
+              <strong>$100/mo</strong>
+            </div>
+            <div class="pool-meta-box">
+              <span>Illustrative members</span>
+              <strong>71</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 26px;"></div>
+
+      <div class="grid-2">
+        <div class="outcome-box">
+          <h4>Possible Member Experience</h4>
+          <p>
+            A participant joins the Growth Pool, contributes consistently, tracks
+            the community pool progress, and sees a clear, structured path toward
+            financial participation that would have felt out of reach alone.
+          </p>
+        </div>
+
+        <div class="outcome-box">
+          <h4>Possible Community Outcome</h4>
+          <p>
+            As participation grows, NestInvest can create stronger pooled
+            opportunities, improved stability, and a more accessible way for
+            everyday people to benefit from structured collective action.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="footer-cta">
+  <section id="signup">
     <div class="container">
-      <h2>The Future of Saving Can Be Shared</h2>
-      <p>
-        NestInvest is building toward a more disciplined, community-driven model
-        of financial opportunity — one where more people can participate, benefit,
-        and build together.
-      </p>
-      <a href="#top" class="btn btn-primary">Back to Top</a>
+      <div class="signup-wrap">
+        <h3>Join the NestInvest Email List</h3>
+        <p>
+          Get updates as NestInvest develops. Enter your information below and
+          connect your form to an email service so submissions go straight to you.
+        </p>
+
+        <form
+          class="signup-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <button type="submit">Join List</button>
+        </form>
+
+        <p class="signup-note">
+          To make this actually send submissions to you, create a Formspree form
+          and replace <strong>YOUR_FORM_ID</strong> in the form action with your real form ID.
+        </p>
+      </div>
     </div>
   </section>
 
   <footer>
-    © 2026 NestInvest. All rights reserved.
+    © 2026 NestInvest. Built to expand access to meaningful financial opportunity.
   </footer>
 </body>
 </html>
