@@ -1,11 +1,407 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NestInvest</title>
-</head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<body style="font-family:Arial; text-align:center; margin-top:120px;">
-  <h1>NestInvest</h1>
-  <p>Community-driven investing.</p>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8f4;
+      color: #17352c;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e5f4d 0%, #2a7a63 100%);
+      color: white;
+      padding: 90px 0 80px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .hero .tagline {
+      font-size: 22px;
+      text-align: center;
+      color: #f8e6be;
+      margin-bottom: 24px;
+    }
+
+    .hero .intro {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      text-align: center;
+      font-size: 18px;
+      color: #ecf7f2;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #db8c09;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #1e5f4d;
+    }
+
+    .btn-secondary:hover {
+      background: #f2f2f2;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+      text-align: center;
+      color: #17352c;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: #52635b;
+      font-size: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #17352c;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #52635b;
+      font-size: 16px;
+    }
+
+    .highlight-section {
+      background: #eef5f0;
+    }
+
+    .statement-box {
+      background: white;
+      border-left: 6px solid #f59e0b;
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .statement-box h3 {
+      margin-bottom: 10px;
+      color: #1e5f4d;
+      font-size: 22px;
+    }
+
+    .statement-box p {
+      color: #43544d;
+      font-size: 17px;
+    }
+
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .value-pill {
+      background: #1e5f4d;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .purpose-box {
+      background: #1e5f4d;
+      color: white;
+      border-radius: 20px;
+      padding: 34px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .purpose-box h2 {
+      color: white;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    .purpose-box p {
+      color: #ebf7f1;
+      font-size: 18px;
+    }
+
+    .footer-cta {
+      background: #17352c;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .footer-cta h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer-cta p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: #dfeae5;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+      color: #6b7a72;
+      background: #f7f8f4;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero .tagline {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>NestInvest</h1>
+      <p class="tagline">Save together. Grow together.</p>
+      <p class="intro">
+        NestInvest is a community-driven financial concept designed to expand access
+        to meaningful financial opportunity by combining disciplined saving,
+        shared accountability, and pooled investing into one transparent and
+        exciting platform.
+      </p>
+      <div class="hero-buttons">
+        <a href="#mission" class="btn btn-primary">Learn More</a>
+        <a href="#purpose" class="btn btn-secondary">Why NestInvest Exists</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>What NestInvest Does</h2>
+      <p class="section-intro">
+        NestInvest uniquely blends community-based saving, shared accountability,
+        and pooled investing to create structured financial opportunities that
+        individuals often cannot access alone.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Community-Based Saving</h3>
+          <p>
+            NestInvest encourages people to build savings together rather than in
+            isolation, turning financial discipline into a shared experience.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reduced Individual Risk</h3>
+          <p>
+            By combining shared investment principles and structured systems,
+            NestInvest aims to create opportunities with greater stability and
+            confidence for everyday participants.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Transparent Opportunity</h3>
+          <p>
+            NestInvest is built around transparent and secure systems that help
+            participants understand the process, trust the platform, and stay engaged.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-section" id="mission">
+    <div class="container">
+      <h2>Vision & Mission</h2>
+      <p class="section-intro">
+        The NestInvest foundation is built on a clear long-term vision and a
+        practical mission centered on access, discipline, and meaningful financial opportunity.
+      </p>
+
+      <div class="statement-box">
+        <h3>Vision</h3>
+        <p>
+          To expand access to meaningful financial opportunity by transforming
+          saving into a disciplined community-driven force.
+        </p>
+      </div>
+
+      <div class="statement-box">
+        <h3>Mission</h3>
+        <p>
+          NestInvest empowers people to build savings together by combining
+          shared investment, reduced individual risk, and transparent and secure
+          systems that create meaningful and exciting financial opportunities for
+          all participants.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="purpose">
+    <div class="container">
+      <div class="purpose-box">
+        <h2>Our Purpose</h2>
+        <p>
+          We exist to remove the structural and behavioral barriers that prevent
+          everyday individuals from participating in meaningful financial opportunities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Core Values</h2>
+      <p class="section-intro">
+        These values guide how NestInvest is designed, communicated, and built for its community.
+      </p>
+
+      <div class="values">
+        <div class="value-pill">Accountability</div>
+        <div class="value-pill">Community</div>
+        <div class="value-pill">Equal Opportunity</div>
+        <div class="value-pill">Security</div>
+        <div class="value-pill">Discipline</div>
+        <div class="value-pill">Transparency</div>
+        <div class="value-pill">Opportunity Creation</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-section">
+    <div class="container">
+      <h2>Why NestInvest Matters</h2>
+      <p class="section-intro">
+        Traditional financial systems often leave everyday people on the outside.
+        NestInvest is designed to create a more accessible path forward.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Removes Barriers</h3>
+          <p>
+            NestInvest addresses both structural and behavioral obstacles that keep
+            people from participating in meaningful financial growth.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Creates New Possibility</h3>
+          <p>
+            Through pooled participation and disciplined systems, NestInvest seeks
+            to unlock financial opportunities that individuals may struggle to
+            reach on their own.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <div class="container">
+      <h2>The Future of Saving Can Be Shared</h2>
+      <p>
+        NestInvest is building toward a more disciplined, community-driven model
+        of financial opportunity — one where more people can participate, benefit,
+        and build together.
+      </p>
+      <a href="#top" class="btn btn-primary">Back to Top</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 NestInvest. All rights reserved.
+  </footer>
 </body>
 </html>
